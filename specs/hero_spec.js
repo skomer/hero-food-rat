@@ -4,7 +4,13 @@ var Food = require('../Food.js');
 
 describe('Hero', function() {
 
-    var skippy = new Hero("Skippy", 19, "fruit");
+    var skippy;
+    var sausages;
+
+    beforeEach(function() {
+       skippy = new Hero("Skippy", 19, "fruit");
+       sausages = new Food("sausages", 7); 
+    });
 
     it('has name', function() {
         assert.equal("Skippy", skippy.name);
@@ -18,7 +24,13 @@ describe('Hero', function() {
     it('uses prototype talk method', function() {
         assert.equal("I am Skippy. Look at that beautiful light", skippy.talk());
     });
-
+    it('uses prototype eat method', function() {
+        assert.equal('yum', skippy.eat(sausages));
+    });
+    it('health goes up when hero eats', function() {
+        skippy.eat(sausages);
+        assert.equal(26, skippy.health);
+    });
 
 
 });
