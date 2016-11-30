@@ -7,8 +7,8 @@ describe('Food', function() {
     var mushrooms;
 
     beforeEach(function() {
-        sausages = new Food('sausages', 7, 'none');
-        mushrooms= new Food('mushrooms', 1, 'middle');
+        sausages = new Food('sausages', 7, 0);
+        mushrooms = new Food('mushrooms', 1, 2);
     });
 
     it('has name', function() {
@@ -18,8 +18,8 @@ describe('Food', function() {
         assert.equal(7, sausages.healthValue);
     });
     it('has poison level', function() {
-        assert.equal('none', sausages.poisonLevel);
-        assert.equal('middle', mushrooms.poisonLevel);
+        assert.equal(0, sausages.poisonLevel);
+        assert.equal(2, mushrooms.poisonLevel);
     });
 
 
