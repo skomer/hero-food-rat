@@ -1,8 +1,8 @@
 
-var Hero = function(name, health, favourite_food) {
+var Hero = function(name, health, favouriteFood) {
     this.name = name;
     this.health = health;
-    this.favouriteFood = favourite_food;
+    this.favouriteFood = favouriteFood;
 };
 
 Hero.prototype = {
@@ -10,7 +10,11 @@ Hero.prototype = {
         return "I am " + this.name + ". Look at that beautiful light";
     },
     eat: function(food) {
+        if (food.name === this.favouriteFood) {
+            this.health += 1.5*(food.healthValue);
+        } else {
         this.health += food.healthValue;
+        }
         return "yum";
     }
 };

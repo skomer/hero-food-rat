@@ -9,7 +9,8 @@ describe('Hero', function() {
 
     beforeEach(function() {
        skippy = new Hero("Skippy", 19, "fruit");
-       sausages = new Food("sausages", 7); 
+       sausages = new Food("sausages", 7);
+       fruit = new Food("fruit", 2);
     });
 
     it('has name', function() {
@@ -31,6 +32,17 @@ describe('Hero', function() {
         skippy.eat(sausages);
         assert.equal(26, skippy.health);
     });
+    it('eating favourite food gives 1.5 x health benefit', function() {
+        skippy.eat(fruit);
+        assert.equal(22, skippy.health);
+    });
 
 
 });
+
+
+
+
+
+
+
