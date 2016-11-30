@@ -8,9 +8,9 @@ describe('Hero', function() {
     var sausages;
 
     beforeEach(function() {
-       skippy = new Hero("Skippy", 19, "fruit");
-       sausages = new Food("sausages", 7);
-       fruit = new Food("fruit", 2);
+       skippy = new Hero('Skippy', 19, 'fruit');
+       sausages = new Food('sausages', 7, 'none');
+       fruit = new Food("fruit", 2, 'none');
     });
 
     it('has name', function() {

@@ -6,4 +6,6 @@ var Rat = function(type, diseaseLevel) {
 
 
 
+
+
 module.exports = Rat;
