@@ -10,16 +10,18 @@ Hero.prototype = {
         return "I am " + this.name + ". Look at that beautiful light";
     },
     eat: function(food) {
+        var getFoodHealth;
+        var getFoodPoison;
+
         if (food.name === this.favouriteFood) {
-            this.health += 1.5*(food.healthValue);
+            getFoodHealth = 1.5*(food.healthValue);
         } else {
-        this.health += food.healthValue;
+        getFoodHealth = food.healthValue;
         }
+        getFoodPoison = food.healthValue * food.poisonLevel;
+        this.health += (getFoodHealth - getFoodPoison);
         return "yum";
     }
 };
-
-
-
 
 module.exports = Hero;
