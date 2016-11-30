@@ -4,7 +4,13 @@ var Rat = function(type, diseaseLevel) {
     this.diseaseLevel = diseaseLevel;
 }
 
+Rat.prototype = {
+    touchFood: function(food) {
+        food.poisonLevel = this.diseaseLevel;
+    }
 
+
+}
 
 
 
